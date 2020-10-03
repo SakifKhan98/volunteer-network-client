@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { fakeData } from "../../fakeData/fakeData";
+import InsideHeader from "../InsideHeader/InsideHeader";
 import VolunteerActivity from "../VolunteerActivity/VolunteerActivity";
 import "./VolunteerActivities.css";
 

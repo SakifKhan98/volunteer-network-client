@@ -1,12 +1,12 @@
 import React from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import logo from "../../resources/icons/logo.png";
-import "./Header.css";
+import "./InsideHeader.css";
 
-const Header = () => {
+const InsideHeader = () => {
   return (
     <div className="container">
-      <Navbar bg="transparent" variant="light">
+      <Navbar bg="lightgrey" variant="light">
         <Navbar.Brand href="#home">
           <img src={logo} alt="volunteer-network" srcSet="" />
         </Navbar.Brand>
@@ -15,16 +15,11 @@ const Header = () => {
           <Nav.Link href="#features">Donation</Nav.Link>
           <Nav.Link href="#pricing">Events</Nav.Link>
           <Nav.Link href="#pricing">Blog</Nav.Link>
-          <Nav.Link href="/login">
-            <Button variant="primary">Register</Button>
-          </Nav.Link>
-          <Nav.Link href="#pricing">
-            <Button variant="dark">Admin</Button>
-          </Nav.Link>
+          <Nav.Link href="">Dynamic Username</Nav.Link>
         </Nav>
       </Navbar>
     </div>
   );
 };
 
-export default Header;
+export default InsideHeader;

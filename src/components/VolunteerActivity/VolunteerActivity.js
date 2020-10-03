@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./VolunteerActivity.css";
 
 const VolunteerActivity = (props) => {
@@ -8,15 +9,23 @@ const VolunteerActivity = (props) => {
   return (
     <>
       <Col md={6} lg={3}>
-        <Card
-          className="activityCard"
-          style={{ marginTop: 20, marginBottom: 20 }}
-        >
-          <Card.Img style={{ width: "100%", height: "100%" }} src={image} />
-          <Card.Footer style={{ backgroundColor: color, color: "white" }}>
-            {name}
-          </Card.Footer>
-        </Card>
+        <Link to="/volunteerRegister">
+          <Card
+            className="activityCard"
+            style={{ marginTop: 20, marginBottom: 20 }}
+          >
+            <Card.Img style={{ width: "100%", height: "100%" }} src={image} />
+            <Card.Footer
+              style={{
+                backgroundColor: color,
+                color: "white",
+                textAlign: "center",
+              }}
+            >
+              {name}
+            </Card.Footer>
+          </Card>
+        </Link>
       </Col>
     </>
   );
