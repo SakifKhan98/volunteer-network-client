@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { fakeData } from "../../fakeData/fakeData";
-import InsideHeader from "../InsideHeader/InsideHeader";
 import VolunteerActivity from "../VolunteerActivity/VolunteerActivity";
 import "./VolunteerActivities.css";
 
 const VolunteerActivities = () => {
-  const [activties, setActivities] = useState(fakeData);
+  const [activties, setActivities] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/events")
+      .then((res) => res.json())
+      .then((data) => setActivities(data));
+  }, []);
   return (
     <Container style={{ display: "flex", marginTop: 40 }}>
       <Row>

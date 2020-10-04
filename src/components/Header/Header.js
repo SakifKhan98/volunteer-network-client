@@ -18,7 +18,7 @@ const Header = () => {
           <Nav.Link href="/login">
             <Button variant="primary">Register</Button>
           </Nav.Link>
-          <Nav.Link href="#pricing">
+          <Nav.Link href="/admin">
             <Button variant="dark">Admin</Button>
           </Nav.Link>
         </Nav>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link, useParams } from "react-router-dom";
@@ -10,6 +10,14 @@ import { ErrorMessage } from "@hookform/error-message";
 
 const VolunteerRegister = () => {
   let { activityId } = useParams();
+  // const [activity, setActivity] = useState({});
+
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/volunteerRegister/" + activityId)
+  //     .then((res) => res.json())
+  //     .then((data) => setActivity(data));
+  // }, [activityId]);
+
   const activity = fakeData.find(
     (actv) => actv.id.toString() === activityId.toString()
   );

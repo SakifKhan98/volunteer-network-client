@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+import AddEvent from "./components/AddEvent/AddEvent";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
@@ -34,6 +35,9 @@ function App() {
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="/admin">
+            <AddEvent></AddEvent>
           </Route>
           <Route path="/selectedActivities">
             <SelectedActivities></SelectedActivities>
