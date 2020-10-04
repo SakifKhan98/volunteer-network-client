@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import SelectedActivities from "./components/SelectedActivities/SelectedActivities";
 import VolunteerRegister from "./components/VolunteerRegister/VolunteerRegister";
 
@@ -12,6 +13,8 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  // const [selectedActivity, setSelectedActivity] = useState({});
+
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <p>Name: {loggedInUser.name}</p>
@@ -23,9 +26,12 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route path="/volunteerRegister">
+          {/* <PrivateRoute path="/volunteerRegister">
             <VolunteerRegister></VolunteerRegister>
-          </Route>
+          </PrivateRoute> */}
+          <PrivateRoute path="/volunteerRegister/:activityId">
+            <VolunteerRegister></VolunteerRegister>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>

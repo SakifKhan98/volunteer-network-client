@@ -8,7 +8,7 @@ const Header = () => {
     <div className="container">
       <Navbar bg="transparent" variant="light">
         <Navbar.Brand href="#home">
-          <img src={logo} alt="volunteer-network" srcSet="" />
+          <img className="logo" src={logo} alt="volunteer-network" srcSet="" />
         </Navbar.Brand>
         <Nav className="ml-auto">
           <Nav.Link href="#home">Home</Nav.Link>

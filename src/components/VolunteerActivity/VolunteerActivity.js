@@ -9,7 +9,7 @@ const VolunteerActivity = (props) => {
   return (
     <>
       <Col md={6} lg={3}>
-        <Link to="/volunteerRegister">
+        <Link to={"/volunteerRegister/" + id}>
           <Card
             className="activityCard"
             style={{ marginTop: 20, marginBottom: 20 }}

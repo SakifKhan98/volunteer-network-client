@@ -104,7 +104,7 @@ export var fakeData = [
   {
     id: 18,
     name: "Babysit during PTA meetings.",
-    image: "https://i.imgur.com/XNgQHiL.png",
+    image: "https://i.imgur.com/76AhquV.png",
     color: "#3F90FC",
   },
   {
