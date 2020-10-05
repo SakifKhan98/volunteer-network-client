@@ -9,7 +9,10 @@ const SelectedActivities = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/userActivities?email=" + loggedInUser.email)
+    fetch(
+      "https://infinite-badlands-94198.herokuapp.com/userActivities?email=" +
+        loggedInUser.email
+    )
       .then((res) => res.json())
       .then((data) => setActivities(data));
   }, []);

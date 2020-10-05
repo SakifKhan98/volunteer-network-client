@@ -33,9 +33,12 @@ const SelectedActivity = (props) => {
 
   const handleDeleteActivity = (_id) => {
     console.log("deleting activity");
-    fetch(`http://localhost:5000/selectedActivities/${_id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://infinite-badlands-94198.herokuapp.com/selectedActivities/${_id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log("deleting activity");

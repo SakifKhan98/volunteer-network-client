@@ -20,7 +20,7 @@ const VolunteerRegister = () => {
   const { register, handleSubmit, watch, errors } = useForm();
 
   const onSubmit = (values) => {
-    fetch("http://localhost:5000/addUserActivity", {
+    fetch("https://infinite-badlands-94198.herokuapp.com/addUserActivity", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),

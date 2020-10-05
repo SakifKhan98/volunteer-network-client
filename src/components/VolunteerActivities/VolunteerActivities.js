@@ -7,7 +7,7 @@ const VolunteerActivities = () => {
   const [activties, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/events")
+    fetch("https://infinite-badlands-94198.herokuapp.com/events")
       .then((res) => res.json())
       .then((data) => setActivities(data));
   }, []);

@@ -6,7 +6,7 @@ const AdminList = () => {
   const [activties, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/activityList")
+    fetch("https://infinite-badlands-94198.herokuapp.com/activityList")
       .then((res) => res.json())
       .then((data) => setActivities(data));
   }, []);
