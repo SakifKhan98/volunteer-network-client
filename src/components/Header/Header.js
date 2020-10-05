@@ -8,15 +8,22 @@ const Header = () => {
   return (
     <div className="container">
       <Navbar bg="transparent" variant="light">
-        <Navbar.Brand href="#home">
-          <img className="logo" src={logo} alt="volunteer-network" srcSet="" />
+        <Navbar.Brand href="">
+          <Link to="/home">
+            <img
+              className="logo"
+              src={logo}
+              alt="volunteer-network"
+              srcSet=""
+            />
+          </Link>
         </Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Donation</Nav.Link>
-          <Nav.Link href="#pricing">Events</Nav.Link>
-          <Nav.Link href="">
-            <Link to="/selectedActivities">Blog</Link>
+          <Nav.Link href="#">Home</Nav.Link>
+          <Nav.Link href="#">Donation</Nav.Link>
+          <Nav.Link href="#">Events</Nav.Link>
+          <Nav.Link href="#">
+            <Link to="/selectedActivities">User Activities</Link>
           </Nav.Link>
           <Nav.Link href="">
             <Link to="/login">

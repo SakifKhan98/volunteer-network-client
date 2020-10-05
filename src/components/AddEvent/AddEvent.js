@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 
 const AddEvent = () => {
   const { register, handleSubmit, watch, errors } = useForm();
-  // const onSubmit = (data) => console.log(data);\
   const onSubmit = (values) => {
     fetch("http://localhost:5000/addEvent", {
       method: "POST",
@@ -25,6 +24,9 @@ const AddEvent = () => {
       style={{ marginBottom: 30 }}
       className="container col-lg-6 justify-content-md-center"
     >
+      <center>
+        <h1>Add A New Event</h1>
+      </center>
       <form className="" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
           <label htmlFor="eventTitle">Event Title</label>

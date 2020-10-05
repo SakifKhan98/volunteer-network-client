@@ -13,16 +13,24 @@ const AdminList = () => {
 
   return (
     <div>
-      <Link to="/addEvent">
-        <Button>Add A New Event</Button>
-      </Link>
+      <center>
+        <h3>Click the button below to Add A New Event</h3>
+        <br />
+        <Link to="/addEvent">
+          <Button>Add A New Event</Button>
+        </Link>
+      </center>
 
-      <Container style={{ display: "flex", marginTop: 40 }}>
+      <Container
+        className="container col-lg-8 justify-content-md-center"
+        style={{ display: "flex", marginTop: 40 }}
+      >
         <Row>
+          <h1>List of All Registered Activities By Users</h1>
           <ol>
             {activties.map((actv) => (
               <li>
-                {actv.fullName}.... {actv.email} .... {actv.date} ...{" "}
+                {actv.fullName} || {actv.email} || {actv.date} ||{" "}
                 {actv.selectedActivity}
               </li>
             ))}

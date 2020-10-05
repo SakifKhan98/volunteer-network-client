@@ -16,7 +16,6 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  // const [selectedActivity, setSelectedActivity] = useState({});
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -29,9 +28,6 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-          {/* <PrivateRoute path="/volunteerRegister">
-            <VolunteerRegister></VolunteerRegister>
-          </PrivateRoute> */}
           <PrivateRoute path="/volunteerRegister/:activityId">
             <VolunteerRegister></VolunteerRegister>
           </PrivateRoute>

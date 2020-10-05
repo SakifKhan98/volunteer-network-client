@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { fakeData } from "../../fakeData/fakeData";
 import logo from "../../resources/icons/logo.png";
 import "./VolunteerRegister.css";
@@ -10,6 +10,8 @@ import { ErrorMessage } from "@hookform/error-message";
 
 const VolunteerRegister = () => {
   let { activityId } = useParams();
+  const history = useHistory();
+
   // const [activity, setActivity] = useState({});
 
   // useEffect(() => {
@@ -24,6 +26,7 @@ const VolunteerRegister = () => {
   );
   const { register, handleSubmit, watch, errors } = useForm();
   // const onSubmit = (data) => console.log(data);
+
   const onSubmit = (values) => {
     fetch("http://localhost:5000/addUserActivity", {
       method: "POST",
@@ -34,6 +37,7 @@ const VolunteerRegister = () => {
       .then((data) => {
         if (data) {
           alert("Your Activity has been successfully Added");
+          history.push("/selectedActivities");
         }
       });
     console.log(values);
@@ -137,10 +141,11 @@ const VolunteerRegister = () => {
             errors={errors}
           />
         </div>
-
+        {/* <Link to="/selectedActivities"> */}
         <button className="btn btn-primary btn-block" type="submit">
           Submit
         </button>
+        {/* </Link> */}
       </form>
     </div>
   );

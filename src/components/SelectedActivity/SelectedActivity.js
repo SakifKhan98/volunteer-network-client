@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -27,6 +27,20 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "100%",
   },
 }));
+
+// const [isDeleted, setIsDeleted] = useState (false);
+
+// const handleDeleteActivity = (id) => {
+//   console.log("deleting activity");
+//   fetch(`http://localhost:5000/selectedActivities/${id}`, {
+//     method: "DELETE",
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       alert("Deleted Activity Successfully");
+//     });
+//   setIsDeleted(true);
+// };
 
 const SelectedActivity = (props) => {
   const classes = useStyles();
