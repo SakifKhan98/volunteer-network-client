@@ -11,7 +11,7 @@ const InsideHeader = () => {
     <div className="container">
       <Navbar bg="lightgrey" variant="light">
         <Navbar.Brand href="">
-          <Link to=" /home">
+          <Link to="/home">
             <img src={logo} alt="volunteer-network" srcSet="" />
           </Link>
         </Navbar.Brand>

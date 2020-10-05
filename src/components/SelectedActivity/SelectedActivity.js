@@ -28,21 +28,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const [isDeleted, setIsDeleted] = useState (false);
-
-// const handleDeleteActivity = (id) => {
-//   console.log("deleting activity");
-//   fetch(`http://localhost:5000/selectedActivities/${id}`, {
-//     method: "DELETE",
-//   })
-//     .then((res) => res.json())
-//     .then((data) => {
-//       alert("Deleted Activity Successfully");
-//     });
-//   setIsDeleted(true);
-// };
-
 const SelectedActivity = (props) => {
+  const [isDeleted, setIsDeleted] = useState(false);
+
+  const handleDeleteActivity = (_id) => {
+    console.log("deleting activity");
+    fetch(`http://localhost:5000/selectedActivities/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("deleting activity");
+      });
+    setIsDeleted(true);
+  };
   const classes = useStyles();
 
   const { selectedActivity, date } = props.activity;
@@ -72,7 +71,7 @@ const SelectedActivity = (props) => {
                 </Grid>
               </Grid>
               <Grid item>
-                <Button>Remove</Button>
+                <Button onClick={handleDeleteActivity}>Remove</Button>
               </Grid>
             </Grid>
           </Grid>

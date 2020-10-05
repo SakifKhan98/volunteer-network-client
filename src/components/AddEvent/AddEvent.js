@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const AddEvent = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = (values) => {
     fetch("http://localhost:5000/addEvent", {
       method: "POST",

@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import { fakeData } from "../../fakeData/fakeData";
 import InsideHeader from "../InsideHeader/InsideHeader";
 import SelectedActivity from "../SelectedActivity/SelectedActivity";
 import { UserContext } from "../../App";

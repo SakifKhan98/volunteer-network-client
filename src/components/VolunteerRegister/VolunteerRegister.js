@@ -12,20 +12,12 @@ const VolunteerRegister = () => {
   let { activityId } = useParams();
   const history = useHistory();
 
-  // const [activity, setActivity] = useState({});
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/volunteerRegister/" + activityId)
-  //     .then((res) => res.json())
-  //     .then((data) => setActivity(data));
-  // }, [activityId]);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   const activity = fakeData.find(
     (actv) => actv.id.toString() === activityId.toString()
   );
   const { register, handleSubmit, watch, errors } = useForm();
-  // const onSubmit = (data) => console.log(data);
 
   const onSubmit = (values) => {
     fetch("http://localhost:5000/addUserActivity", {
@@ -40,9 +32,7 @@ const VolunteerRegister = () => {
           history.push("/selectedActivities");
         }
       });
-    console.log(values);
   };
-  console.log(activity);
 
   return (
     <div
@@ -141,11 +131,9 @@ const VolunteerRegister = () => {
             errors={errors}
           />
         </div>
-        {/* <Link to="/selectedActivities"> */}
         <button className="btn btn-primary btn-block" type="submit">
           Submit
         </button>
-        {/* </Link> */}
       </form>
     </div>
   );

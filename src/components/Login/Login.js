@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import * as firebase from "firebase/app";
 import firebaseConfig from "./firebase.config";
 import "firebase/auth";
-import Button from "@material-ui/core/Button";
 import logo from "../../resources/icons/logo.png";
 import googleIcon from "../../resources/icons/google.png";
 
@@ -122,7 +121,6 @@ const Login = () => {
           </center>
         </div>
       </Container>
-      {/* <Button onClick={handleGoogleSignIn}>Login</Button> */}
     </div>
   );
 };
