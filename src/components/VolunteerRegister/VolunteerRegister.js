@@ -17,6 +17,7 @@ const VolunteerRegister = () => {
   //     .then((res) => res.json())
   //     .then((data) => setActivity(data));
   // }, [activityId]);
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   const activity = fakeData.find(
     (actv) => actv.id.toString() === activityId.toString()
@@ -24,11 +25,20 @@ const VolunteerRegister = () => {
   const { register, handleSubmit, watch, errors } = useForm();
   // const onSubmit = (data) => console.log(data);
   const onSubmit = (values) => {
-    // form is valid
+    fetch("http://localhost:5000/addUserActivity", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          alert("Your Activity has been successfully Added");
+        }
+      });
     console.log(values);
   };
   console.log(activity);
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   return (
     <div

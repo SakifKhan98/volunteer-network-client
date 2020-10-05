@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
+import { UserContext } from "../../App";
 import logo from "../../resources/icons/logo.png";
 import "./InsideHeader.css";
 
 const InsideHeader = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
     <div className="container">
       <Navbar bg="lightgrey" variant="light">
@@ -15,7 +17,9 @@ const InsideHeader = () => {
           <Nav.Link href="#features">Donation</Nav.Link>
           <Nav.Link href="#pricing">Events</Nav.Link>
           <Nav.Link href="#pricing">Blog</Nav.Link>
-          <Nav.Link href="">Dynamic Username</Nav.Link>
+          <Navbar.Text>
+            Signed in as: <storng>{loggedInUser.name}</storng>
+          </Navbar.Text>
         </Nav>
       </Navbar>
     </div>

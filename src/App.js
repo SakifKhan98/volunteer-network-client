@@ -2,7 +2,9 @@ import React, { createContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+import ActivityDetails from "./components/ActivityDetails/ActivityDetails";
 import AddEvent from "./components/AddEvent/AddEvent";
+import AdminList from "./components/AdminList/AdminList";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
@@ -33,10 +35,16 @@ function App() {
           <PrivateRoute path="/volunteerRegister/:activityId">
             <VolunteerRegister></VolunteerRegister>
           </PrivateRoute>
+          <Route path="/activity/:activityId">
+            <ActivityDetails></ActivityDetails>
+          </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
           <Route path="/admin">
+            <AdminList></AdminList>
+          </Route>
+          <Route path="/addEvent">
             <AddEvent></AddEvent>
           </Route>
           <Route path="/selectedActivities">

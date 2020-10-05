@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
+import image from "../../resources/images/extraVolunteer.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 const SelectedActivity = (props) => {
   const classes = useStyles();
 
-  const { image, name, id, color } = props.activity;
+  const { selectedActivity, date } = props.activity;
   return (
     <Col md={6} lg={6}>
       <div className={classes.root}>
@@ -49,10 +50,10 @@ const SelectedActivity = (props) => {
               <Grid item xs container direction="column" spacing={2}>
                 <Grid item xs>
                   <Typography gutterBottom variant="subtitle1">
-                    {name}
+                    {selectedActivity}
                   </Typography>
                   <Typography variant="body2" gutterBottom>
-                    Date
+                    {date}
                   </Typography>
                 </Grid>
               </Grid>
